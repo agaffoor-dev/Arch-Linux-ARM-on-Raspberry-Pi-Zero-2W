@@ -21,13 +21,13 @@ setfont drdos8x16
 - Check if an internet connection is currently present:
 ```bash
 ping 8.8.8.8 # If not present, it will state "Network is unreachable"
-# There is not ethernet port on the rpi02w, so I followed this: [tutorial](https://www.linuxandubuntu.com/home/how-to-setup-a-wifi-in-arch-linux-using-terminal/)
-cp /etc/netctl/examples/wireless-wpa /etc/netctl/your_profile
-nano /etc/netctl/your_profile # Enter your ESSID with appropriate 2.5G connection (5G connection isn't supported) and password for that connection. Save the text file and exit.
-cd /etc/netctl
-netctl start your_profile
+```
+- Connect to wifi using wifi-menu (Convenient tools like iwctl don't come prepackaged in arch linux arm in the raspberry pi zero 2 w)
+```bash
+wifi-menu
 ping 8.8.8.8 # Check if the internet connection is active now
-netctl enable your_profile # Creates a systemd service that starts when the rpi boots up
 
 ```
+- Archinstall doesn't come prepackaged in this version.
+- Since this is my first time trying to understand how partitioning works in linux installation, I've accidentally overwritten the entire microsd.
 
