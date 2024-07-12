@@ -30,4 +30,4 @@ ping 8.8.8.8 # Check if the internet connection is active now
 ```
 - Archinstall doesn't come prepackaged in this version.
 - Since this is my first time trying to understand how partitioning works in linux installation, I've accidentally overwritten the entire microsd.
-
+- Three basic partitions are involved in a successful linux installation: At least a 1 gb boot partition, a 1 gb efi partition, a swap partition with a size similar to ram, and a main ext4 partition that holds the root / and /home.
